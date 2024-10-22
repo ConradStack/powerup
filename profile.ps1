@@ -1,17 +1,31 @@
-# Start up profile.ps1
+# no telemetry 
+$env:POWERSHELL_TELEMETRY_OPTOUT = 1
 
-# initialize conda 
-. "$HOME\anaconda3\shell\condabin\conda-hook.ps1"
+# ------------------------
+# Aliases
 
-# Alias for nvidia-smi
-Set-Alias -Name nvidia-smi -value C:\Windows\System32\DriverStore\FileRepository\.....\nvidia-smi.exe
-
-# Alias / function that mimics 'ENV' command in linux
 function env {
     $(gci env:*)
 }
 
-## Other examples:
+function ll {
+    $(dir | sort -property LastWriteTime -Descending)
+}
 
-# $env:userprofile  # print env variable 'userprofile'
+Set-Alias subl 'C:\Program Files\Sublime Text\subl.exe'
+
+
+# ------------------------
+# Chords
+# Get-PSReadLineKeyHandler
+# Get-PSReadLineKeyHandler -Unbound
+Set-PSReadLineKeyHandler -Chord 'Ctrl+a' -Function BeginningOfLine
+Set-PSReadLineKeyHandler -Chord 'Ctrl+e' -Function EndOfLine
+Set-PSReadLineKeyHandler -Chord 'Ctrl+u' -Function DeleteLineToFirstChar
+
+
+# ------------------------
+# Styles
+# $PSStyle
+$PSStyle.FileInfo.Directory = "$($PSStyle.Foreground.BrightYellow)"
 
