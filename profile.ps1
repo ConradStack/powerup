@@ -15,6 +15,13 @@ function ll {
 Set-Alias subl 'C:\Program Files\Sublime Text\subl.exe'
 
 
+# Unblock-File .\Documents\PowerShell\Modules\md5sum.ps1
+# Unblock-File .\Documents\PowerShell\Modules\shasum.ps1
+Set-Alias md5 "$env:USERPROFILE\Documents\PowerShell\Modules\md5sum.ps1"
+Set-Alias shasum "$env:USERPROFILE\Documents\PowerShell\Modules\shasum.ps1"
+
+
+
 # ------------------------
 # Chords
 # Get-PSReadLineKeyHandler
