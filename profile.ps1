@@ -1,3 +1,5 @@
+# %USERPROFILE%\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
+
 # no telemetry 
 $env:POWERSHELL_TELEMETRY_OPTOUT = 1
 
